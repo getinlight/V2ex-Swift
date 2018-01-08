@@ -22,24 +22,8 @@ class HomeViewController: UIViewController {
     var tab:String? = nil
     var currentPage = 0
     
-    fileprivate var _tableView :UITableView!
-    fileprivate var tableView: UITableView {
-        get{
-            if(_tableView != nil){
-                return _tableView!;
-            }
-            _tableView = UITableView();
-
-            _tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
-            
-            regClass(_tableView, cell: HomeTopicListTableViewCell.self);
-            
-            _tableView.delegate = self;
-            _tableView.dataSource = self;
-            return _tableView!;
-            
-        }
-    }
+    fileprivate let tableView: UITableView = UITableView()
+    
     override func viewWillAppear(_ animated: Bool) {
         V2Client.sharedInstance.drawerController?.openDrawerGestureModeMask = .panningCenterView
     }
@@ -50,6 +34,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title="V2EX";
+        
+        //初始化tableView
+        tableView.separatorStyle = .none
+        regClass(tableView, cell: HomeTopicListTableViewCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         self.tab = V2EXSettings.sharedInstance[kHomeTab]
         self.setupNavigationItem()
         
@@ -110,8 +101,7 @@ class HomeViewController: UIViewController {
         }
         
         //根据 tab name 获取帖子列表
-        TopicListModel.getTopicList(tab){
-            (response:V2ValueResponse<[TopicListModel]>) -> Void in
+        TopicListModel.getTopicList(tab){ (response:V2ValueResponse<[TopicListModel]>) -> Void in
             
             if response.success {
                 

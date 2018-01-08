@@ -23,9 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         URLProtocol.registerClass(WebViewImageProtocol.self)
         
-        self.window = UIWindow();
-        self.window?.frame=UIScreen.main.bounds;
-        self.window?.makeKeyAndVisible();
+        self.window = UIWindow(frame: UIScreen.main.bounds)
 
         let centerNav = V2EXNavigationController(rootViewController: HomeViewController());
         let leftViewController = LeftViewController();
@@ -37,12 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             drawerController.view.backgroundColor = V2EXColor.colors.v2_backgroundColor
         }
         
-        drawerController.maximumLeftDrawerWidth=230;
+        drawerController.maximumLeftDrawerWidth = 230;
         drawerController.maximumRightDrawerWidth = rightViewController.maximumRightDrawerWidth()
         drawerController.openDrawerGestureModeMask=OpenDrawerGestureMode.panningCenterView
         drawerController.closeDrawerGestureModeMask=CloseDrawerGestureMode.all;
         self.window?.rootViewController = drawerController;
 
+        self.window?.makeKeyAndVisible();
+        
         V2Client.sharedInstance.drawerController = drawerController
         V2Client.sharedInstance.centerViewController = centerNav.viewControllers[0] as? HomeViewController
         V2Client.sharedInstance.centerNavigation = centerNav

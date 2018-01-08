@@ -176,8 +176,7 @@ extension TopicListModel {
     class func getTopicList(
         _ tab: String? = nil ,
         page:Int = 0 ,
-        completionHandler: @escaping (V2ValueResponse<[TopicListModel]>) -> Void
-        )->Void{
+        completionHandler: @escaping (V2ValueResponse<[TopicListModel]>) -> Void)->Void {
 
         var params:[String:String] = [:]
         if let tab = tab {
@@ -234,7 +233,7 @@ extension TopicListModel {
         Alamofire.request(url, headers: MOBILE_CLIENT_HEADERS).responseJiHtml { (response) -> Void in
             var resultArray:[TopicListModel] = []
             var favoriteUrl :String?
-            if  let jiHtml = response.result.value{
+            if  let jiHtml = response.result.value {
                 if let aRootNode = jiHtml.xPath("//*[@id='Wrapper']/div[@class='content']/div[@class='box']/div[@class='cell']"){
                     for aNode in aRootNode {
                         let topic = TopicListModel(nodeRootNode: aNode)
@@ -258,7 +257,6 @@ extension TopicListModel {
 
     /**
      获取我的收藏帖子列表
-
      */
     class func getFavoriteList(_ page:Int = 1, completionHandler: @escaping (V2ValueResponse<([TopicListModel],Int)>) -> Void){
         Alamofire.request(V2EXURL+"my/topics?p=\(page)", headers: MOBILE_CLIENT_HEADERS).responseJiHtml { (response) -> Void in

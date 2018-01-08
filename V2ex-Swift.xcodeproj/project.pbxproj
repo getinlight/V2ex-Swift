@@ -280,12 +280,12 @@
 		069508D71C3F74FF0088D031 = {
 			isa = PBXGroup;
 			children = (
-				0698397A1C47763800FF7163 /* Resources */,
+				069508E21C3F74FF0088D031 /* V2ex-Swift */,
 				069508F61C3F75A60088D031 /* Common */,
+				069508F71C3F75A60088D031 /* Controller */,
+				0698397A1C47763800FF7163 /* Resources */,
 				069508F81C3F75A60088D031 /* Model */,
 				069508F91C3F75AE0088D031 /* View */,
-				069508F71C3F75A60088D031 /* Controller */,
-				069508E21C3F74FF0088D031 /* V2ex-Swift */,
 				069508E11C3F74FF0088D031 /* Products */,
 				E7ECB16FBE422CEDA3C53BA0 /* Frameworks */,
 				8DF88EA187BC60D6EAF15888 /* Pods */,
@@ -529,7 +529,7 @@
 				TargetAttributes = {
 					069508DF1C3F74FF0088D031 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 5U8LBRXG3A;
+						DevelopmentTeam = 6LVAT8X9U4;
 						LastSwiftMigration = 0910;
 					};
 				};
@@ -896,12 +896,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5U8LBRXG3A;
+				DEVELOPMENT_TEAM = 6LVAT8X9U4;
 				INFOPLIST_FILE = "V2ex-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.fin.V2ex-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "getinlight.V2ex-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -914,11 +914,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5U8LBRXG3A;
+				DEVELOPMENT_TEAM = 6LVAT8X9U4;
 				INFOPLIST_FILE = "V2ex-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "me.fin.V2ex-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "getinlight.V2ex-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
